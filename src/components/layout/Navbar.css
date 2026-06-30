@@ -1,0 +1,57 @@
+.navbar {
+  background: var(--navy);
+  padding: 0.9rem 0;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; }
+.nav-logo {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-family: 'Playfair Display', serif; font-size: 1.4rem;
+  color: var(--gold); text-decoration: none; font-weight: 700;
+}
+.logo-icon { font-size: 1.5rem; }
+.nav-links {
+  display: flex; align-items: center; gap: 1.5rem;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem;
+  font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-auth { display: flex; align-items: center; gap: 0.75rem; }
+.nav-avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
+.nav-dropdown { position: relative; }
+.drop-trigger {
+  display: flex; align-items: center; gap: 0.4rem;
+  background: none; border: none; color: rgba(255,255,255,0.85);
+  cursor: pointer; font-size: 0.9rem; font-weight: 500; padding: 0.3rem 0.5rem;
+  border-radius: 6px; transition: background 0.2s;
+}
+.drop-trigger:hover { background: rgba(255,255,255,0.1); }
+.drop-menu {
+  position: absolute; right: 0; top: calc(100% + 8px);
+  background: var(--white); border-radius: var(--radius); min-width: 160px;
+  box-shadow: var(--shadow-lg); border: 1px solid var(--gray-200); overflow: hidden;
+}
+.drop-menu a, .drop-menu button {
+  display: block; width: 100%; padding: 0.7rem 1rem;
+  color: var(--gray-800); text-decoration: none; font-size: 0.875rem;
+  background: none; border: none; text-align: left; cursor: pointer;
+  transition: background 0.15s;
+}
+.drop-menu a:hover, .drop-menu button:hover { background: var(--gray-100); color: var(--navy); }
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-links {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--navy); flex-direction: column; padding: 1.5rem;
+    gap: 1rem; align-items: flex-start; border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .nav-links.open { display: flex; }
+  .nav-auth { flex-direction: column; width: 100%; }
+  .nav-auth .btn { width: 100%; justify-content: center; }
+}

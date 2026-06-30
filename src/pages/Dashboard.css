@@ -1,0 +1,34 @@
+.dashboard-content { padding: 2rem 0 5rem; }
+.welcome-card {
+  display: flex; align-items: center; gap: 1.5rem; background: var(--white);
+  border-radius: var(--radius-lg); padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200); margin-bottom: 2rem; flex-wrap: wrap;
+}
+.welcome-avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); }
+.welcome-card h2 { font-size: 1.3rem; color: var(--navy); margin-bottom: 0.25rem; }
+.welcome-card p { font-size: 0.875rem; color: var(--gray-400); }
+.role-badge {
+  background: var(--navy); color: var(--gold); padding: 0.1rem 0.6rem;
+  border-radius: 20px; font-size: 0.7rem; font-weight: 600; text-transform: capitalize;
+}
+.welcome-actions { display: flex; gap: 0.75rem; margin-left: auto; flex-wrap: wrap; }
+.dash-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2.5rem;
+}
+.dash-stat {
+  background: var(--white); border-radius: var(--radius-lg); padding: 1.5rem;
+  text-align: center; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200);
+  font-size: 0.8rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em;
+}
+.dash-stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--navy); font-weight: 700; margin-bottom: 0.25rem; }
+.dash-section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+.dash-section-header h2 { font-size: 1.3rem; color: var(--navy); }
+.empty-dash { text-align: center; padding: 4rem 2rem; color: var(--gray-400); }
+.empty-dash h3 { color: var(--gray-600); margin: 0.75rem 0 0.5rem; }
+.empty-dash p { margin-bottom: 1.5rem; }
+
+@media (max-width: 768px) {
+  .dash-stats { grid-template-columns: repeat(2, 1fr); }
+  .welcome-card { flex-direction: column; text-align: center; }
+  .welcome-actions { margin-left: 0; justify-content: center; }
+}
